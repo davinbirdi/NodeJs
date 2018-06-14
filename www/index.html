@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" href="stylesheet.css"/>
+    </header>
+        
+    <body>
+        <div id="main">
+            <h1>bonjour bitchez</h1>
+            <p>testing 123</p>
+
+            <form>
+                <input id="message" type="text" placeholder="message">
+                <input type="submit" value="Send">
+            </form>
+
+            <!-- "thread" where messages display -->
+            <ul id="thread"></ul>
+        </div>
+
+        <!-- JQuery Connection -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+        <!-- Connect Socket.io -->
+        <script src="/socket.io/socket.io.js"></script>
+
+        <!-- have a client js file to dynamically update page -->
+        <script src="client.js"></script>
+    </body>
+</html>
