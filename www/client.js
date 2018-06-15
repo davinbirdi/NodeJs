@@ -7,8 +7,28 @@ socket.on('connect', function(data){
 });
 
 
-// When the Submit button is pressed send 'messages' to server.
-$('form').submit(function() {
+// jQuery: When the Submit button is pressed send 'messages' to server.
+$('#formname').submit(function() {
+    console.log('submit hit');
+    // set var 'message' to be the values within the HTML ID #message
+    var username = $('#username').val();
+    // Socket emits 'messages' to server
+    socket.emit('enter_username', username);
+    
+    // Hiding the Name input and showing the message spot
+    $('#formname').hide(1000);
+    $('#formchat').show(1000);
+
+    return false;
+});
+/*
+$("#formname").click(function() {
+    $( "div" ).hide( 1000 );
+  });*/
+
+
+// jQuery: When the Submit button is pressed send 'messages' to server.
+$('#formchat').submit(function() {
     console.log('submit hit');
     // set var 'message' to be the values within the HTML ID #message
     var message = $('#message').val();
@@ -17,6 +37,9 @@ $('form').submit(function() {
     this.reset();
     return false;
 });
+
+
+
 
 // Listens for "thread" event to update messages on html page
 socket.on('thread', function(data){
