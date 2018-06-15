@@ -9,15 +9,19 @@
             <h1>bonjour my brochachos</h1>
             <p>testing 123</p>
 
-            <form id="formname">
-                <input id="username"type="text" placeholder="NameHere">
-                <input type="submit" value="Send">
-            </form>
+            <div id='namebox'>
+                <form id="formname">
+                    <input id="username" type="text" placeholder="NameHere">
+                    <input type="submit" value="Send">
+                </form>
+            </div>
 
-            <form id="formchat" display="none">
-                <input id="message" type="text" placeholder="message">
-                <input type="submit" value="Send">
-            </form>
+            <div id="messagebox">
+                <form id="formchat">
+                    <input id="message" type="text" placeholder="message" autocomplete="off">
+                    <input type="submit" value="Send">
+                </form>
+            </div>
 
             <!-- "thread" where messages display -->
             <ul id="thread"></ul>

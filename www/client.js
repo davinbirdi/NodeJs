@@ -16,8 +16,8 @@ $('#formname').submit(function() {
     socket.emit('enter_username', username);
     
     // Hiding the Name input and showing the message spot
-    $('#formname').hide(1000);
-    $('#formchat').show(1000);
+    $('#namebox').hide(1000);
+    $('#messagebox').show(1000);
 
     return false;
 });
