@@ -24,6 +24,10 @@ io.on('connection', function(client){
         console.log(data);
     });
 
+    client.on('enter_username', function(data){
+        console.log('name recieved: ' + data);
+    });
+
     // Server receiving 'messages' and emitting the content as 'thread'
     client.on('messages', function(data){
         console.log("submit recieved" + data);
@@ -31,6 +35,5 @@ io.on('connection', function(client){
         client.broadcast.emit('thread', data);
     })
 });
-
 server.listen(7777);
 console.log('working on port 7777 boys');
