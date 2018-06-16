@@ -20,20 +20,20 @@ app.use(express.static('www'));
 
 // Socket.io applications:
 io.on('connection', function(client){
-    console.log('Client connected');
+    console.log('A Client has connected');
     
     client.on('join', function(data){
         console.log(data);
     });
 
     client.on('enter_username', function(data){
-        console.log('name recieved: ' + data);
+        console.log('user connected: ' + data);
         username = data;
     });
 
     // Server receiving 'messages' and emitting the content as 'thread'
-    client.on('messages', function(data){
-        console.log("submit recieved" + data);
+    client.on('messages', function(username, data){
+        console.log("submit recieved from: " + username + ': '+ data);
         client.emit('thread', data, username);
         client.broadcast.emit('thread', data, username);
     });
