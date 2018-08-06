@@ -3,42 +3,55 @@
     <header>
         <link rel="stylesheet" href="stylesheet.css"/>
     </header>
-        
+    
+    
+
+
     <body>
-        <div id="main">
-            <h1>bonjour my brochachos</h1>
-            <p>testing 123</p>
+        <div class="wrapper">
+            <div id="1">1</div>
+            <div id="2">2</div>
+            <div id="3">3</div>
+            <div id="4">4</div>
+            <div id="5">5</div>
+            <div id="6">6</div>
+            
+            <div id="main">
+                <h1>bonjour my brochachos</h1>
+                <p>testing 123</p>
 
-            <!-- Username Entry -->
-            <div id='namebox'>
-                <form id="formname">
-                    <input id="username" type="text" placeholder="NameHere">
-                    <input type="submit" value="Send">
-                </form>
+                <!-- Username Entry -->
+                <div id='namebox'>
+                    <form id="formname">
+                        <input id="username" type="text" placeholder="NameHere">
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+
+                <!-- "thread" where messages display -->
+                <div id="thread_div">
+                    <ul id="thread"> </ul>
+                </div>
+
+                <!-- Message Entry -->
+                <div id="messagebox">
+                    <form id="formchat">
+                        <input id="message" type="text" placeholder="message" autocomplete="off">
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+
             </div>
 
-            <!-- "thread" where messages display -->
-            <div id="thread_div">
-                <ul id="thread"> </ul>
-            </div>
+            <!-- JQuery Connection -->
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-            <!-- Message Entry -->
-            <div id="messagebox">
-                <form id="formchat">
-                    <input id="message" type="text" placeholder="message" autocomplete="off">
-                    <input type="submit" value="Send">
-                </form>
-            </div>
+            <!-- Connect Socket.io -->
+            <script src="/socket.io/socket.io.js"></script>
+
+            <!-- have a client js file to dynamically update page -->
+            <script src="client.js"></script>
 
         </div>
-
-        <!-- JQuery Connection -->
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-        <!-- Connect Socket.io -->
-        <script src="/socket.io/socket.io.js"></script>
-
-        <!-- have a client js file to dynamically update page -->
-        <script src="client.js"></script>
     </body>
 </html>
